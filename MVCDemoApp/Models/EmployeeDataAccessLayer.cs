@@ -114,7 +114,7 @@ namespace MVCDemoApp.Models
                     employee.DateEnd = Convert.ToDateTime(rdr["DateEnd"].ToString());
                 }
             }
-            return employee;
+            return employee; 
         }
 
         //To Delete the record on a particular employee
