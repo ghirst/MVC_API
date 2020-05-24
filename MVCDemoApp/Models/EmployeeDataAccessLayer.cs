@@ -34,8 +34,8 @@ namespace MVCDemoApp.Models
                         KnownAs = rdr["KnownAs"].ToString(),
                         Department = rdr["Department"].ToString(),
                         Gender = rdr["Gender"].ToString(),
-                        //DateStart = rdr["DateStart"],
-                        //DateEnd = rdr["DateEnd"]
+                        DateStart = Convert.ToDateTime(rdr["DateStart"].ToString()),
+                        DateEnd = Convert.ToDateTime(rdr["DateEnd"].ToString()),
                     };
 
                     lstemployee.Add(employee);
@@ -54,10 +54,14 @@ namespace MVCDemoApp.Models
                 CommandType = CommandType.StoredProcedure
             };
 
+            cmd.Parameters.AddWithValue("@EmpId", employee.ID);
             cmd.Parameters.AddWithValue("@FirstName", employee.FirstName);
             cmd.Parameters.AddWithValue("@LastName", employee.LastName);
+            cmd.Parameters.AddWithValue("@KnownAs", employee.KnownAs);
             cmd.Parameters.AddWithValue("@Department", employee.Department);
             cmd.Parameters.AddWithValue("@DateStart", employee.DateStart);
+            cmd.Parameters.AddWithValue("@DateEnd", employee.DateEnd);
+            cmd.Parameters.AddWithValue("@Gender", employee.Gender);
 
             con.Open();
             cmd.ExecuteNonQuery();
@@ -107,8 +111,8 @@ namespace MVCDemoApp.Models
                     employee.KnownAs = rdr["KnowAs"].ToString();
                     employee.Department = rdr["Department"].ToString();
                     employee.Gender = rdr["Gender"].ToString();
-                    //employee.DateStart = rdr["DateStart"].ToString();
-                    //employee.DateEnd = rdr["DateEnd"].ToString();
+                    employee.DateStart = Convert.ToDateTime(rdr["DateStart"].ToString());
+                    employee.DateEnd = Convert.ToDateTime(rdr["DateEnd"].ToString());
                 }
             }
             return employee;
