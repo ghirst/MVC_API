@@ -1,8 +1,9 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
-namespace MVCDemoApp.Controllers
+namespace MVCDemoApp.Models
 {
-    public class APITestController
+    public class APITest
     {
         public DateTime Date { get; set; }
 

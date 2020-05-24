@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MVCDemoApp.Models;
 
-namespace API.Controllers
+namespace MVCDemoApp.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -19,12 +19,12 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Employee> Get()
+        public IEnumerable<APITest> Get()
         {
             var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new Employee
+            return Enumerable.Range(1, 5).Select(index => new APITest
             {
-                //Date = DateTime.Now.AddDays(index),
+                Date = DateTime.Now.AddDays(index),
                 //TemperatureC = rng.Next(-20, 55),
                 //Summary = Summaries[rng.Next(Summaries.Length)]
             })
