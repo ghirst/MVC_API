@@ -54,7 +54,7 @@ namespace MVCDemoApp.Models
                 CommandType = CommandType.StoredProcedure
             };
 
-            cmd.Parameters.AddWithValue("@EmpId", employee.ID);
+             
             cmd.Parameters.AddWithValue("@FirstName", employee.FirstName);
             cmd.Parameters.AddWithValue("@LastName", employee.LastName);
             cmd.Parameters.AddWithValue("@KnownAs", employee.KnownAs);
