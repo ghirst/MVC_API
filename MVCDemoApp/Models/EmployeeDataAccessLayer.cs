@@ -7,10 +7,10 @@ namespace MVCDemoApp.Models
 {
     public class EmployeeDataAccessLayer
     {
-        readonly string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=myAPITestDB;Data Source=DESKTOP-O6C86PJ\\SQLEXPRESS";
+        private readonly string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=myAPITestDB;Data Source=DESKTOP-O6C86PJ\\SQLEXPRESS";
 
-        //To View all employees details  
-        public IEnumerable<Employee> GetAllDetails ()
+        //To View all employees details
+        public IEnumerable<Employee> GetAllDetails()
         {
             List<Employee> lstemployee = new List<Employee>();
 
@@ -45,7 +45,7 @@ namespace MVCDemoApp.Models
             return lstemployee;
         }
 
-        //To Add new employee record  
+        //To Add new employee record
         public void AddEmployee(Employee employee)
         {
             using SqlConnection con = new SqlConnection(connectionString);
@@ -54,7 +54,6 @@ namespace MVCDemoApp.Models
                 CommandType = CommandType.StoredProcedure
             };
 
-             
             cmd.Parameters.AddWithValue("@FirstName", employee.FirstName);
             cmd.Parameters.AddWithValue("@LastName", employee.LastName);
             cmd.Parameters.AddWithValue("@KnownAs", employee.KnownAs);
@@ -121,7 +120,6 @@ namespace MVCDemoApp.Models
         //To Delete the record on a particular employee
         public void DeleteEmployee(int? id)
         {
-
             using SqlConnection con = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand("spDeleteEmployee", con)
             {
