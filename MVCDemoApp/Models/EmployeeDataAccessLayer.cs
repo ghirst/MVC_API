@@ -107,7 +107,7 @@ namespace MVCDemoApp.Models
                     employee.ID = Convert.ToInt32(rdr["EmployeeID"]);
                     employee.FirstName = rdr["FirstName"].ToString();
                     employee.LastName = rdr["LastName"].ToString();
-                    employee.KnownAs = rdr["KnowAs"].ToString();
+                    employee.KnownAs = rdr["KnownAs"].ToString();
                     employee.Department = rdr["Department"].ToString();
                     employee.Gender = rdr["Gender"].ToString();
                     employee.DateStart = Convert.ToDateTime(rdr["DateStart"].ToString());
