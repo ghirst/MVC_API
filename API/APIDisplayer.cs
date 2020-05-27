@@ -2,7 +2,7 @@ using System;
 
 namespace MVCDemoApp
 {
-    public class WeatherForecast
+    public class APIDisplayer
     {
         public DateTime Date { get; set; }
 
