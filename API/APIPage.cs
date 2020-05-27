@@ -6,9 +6,9 @@ namespace MVCDemoApp
     {
         public DateTime Date { get; set; }
 
-        public int TemperatureC { get; set; }
+        public int RandomNumber { get; set; }
 
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+        public int RandomNumberPlus7 => 7 + (int)(RandomNumber);
 
         public string Summary { get; set; }
     }
