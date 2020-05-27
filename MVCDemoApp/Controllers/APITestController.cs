@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MVCDemoApp.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MVCDemoApp.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     public class APITestController : ControllerBase
-    { 
+    {
         private readonly ILogger<APITestController> _logger;
 
         public APITestController(ILogger<APITestController> logger)
